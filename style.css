@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+}
+
+.hover,
+.square-div {
+    width: 25px;
+    height: 25px;
+    border: solid 1px black;
+}
+
+.hover {
+    background-color: blue;
+}
