@@ -27,9 +27,27 @@ function layOutGrid(grid_dimension){
 
     squares.forEach(item => {
         item.addEventListener('mouseover', (event) => {
-        item.className='hover';
+          //item.className='hover';
+          let bgColor = getComputedStyle(item).backgroundColor;
+          //Assign random background-color if white, else make darker
+          if(bgColor === 'rgb(255, 255, 255)'){
+                item.style.backgroundColor = getRandomRgb();
+                item.style.opacity = 0.1;
+            }
+          else {
+            let opacity = parseFloat(getComputedStyle(item).opacity);
+            item.style.opacity = opacity + 0.1; 
+          }
         });
     });
+}
+
+function getRandomRgb(){
+    const r = Math.floor(Math.random()*256);
+    const g = Math.floor(Math.random()*256);
+    const b = Math.floor(Math.random()*256);
+    //Return the RGB color in string
+    return `rgb(${r}, ${g}, ${b})`;
 }
 
 layOutGrid(grid_dimension);
