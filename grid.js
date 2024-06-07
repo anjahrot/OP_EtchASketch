@@ -31,12 +31,13 @@ function layOutGrid(grid_dimension){
           let bgColor = getComputedStyle(item).backgroundColor;
           //Assign random background-color if white, else make darker
           if(bgColor === 'rgb(255, 255, 255)'){
-                item.style.backgroundColor = getRandomRgb();
-                item.style.opacity = 0.1;
-            }
+            item.style.backgroundColor = getRandomRgb();
+            item.style.opacity = 0.1;
+          }
           else {
-            let opacity = parseFloat(getComputedStyle(item).opacity);
-            item.style.opacity = opacity + 0.1; 
+          item.style.backgroundColor = getRandomRgb();
+          let opacity = parseFloat(getComputedStyle(item).opacity);
+          item.style.opacity = opacity + 0.1;
           }
         });
     });
